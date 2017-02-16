@@ -3,11 +3,20 @@
 
     <item
         is-multidex="true"
+        jar="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\exploded-aar\com.noisepages.nettoyeur\midi\1.0.0-rc1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a35b73ff5c4ab6af57b21c03b9b3aa234d816a7f">
+        <dex dex="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.noisepages.nettoyeur-midi-1.0.0-rc1_b945f1b8be5b9aea2ad4eabfcbfffa2fc3466f3d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="ce514f3cf4532ef769688c1256179db2eac11324">
+        sha1="453876155352c1719f8788df7ce7fd7942f57827">
         <dex dex="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_c5b9c84d30953c8503f3458f9405acfbe32a0e4b\classes.dex" />
     </item>
     <item
@@ -48,6 +57,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.0_7121258abc54ebed26bef2c19de05ae777e940c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -84,24 +102,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\exploded-aar\com.noisepages.nettoyeur\midi\1.0.0-rc1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a35b73ff5c4ab6af57b21c03b9b3aa234d816a7f">
-        <dex dex="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.noisepages.nettoyeur-midi-1.0.0-rc1_b945f1b8be5b9aea2ad4eabfcbfffa2fc3466f3d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.0_7121258abc54ebed26bef2c19de05ae777e940c7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -124,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a3b00c46629c165ca0d9517e53c82dffde60578e">
+        sha1="752ef945e8c0356c9a65be15acffcd41e577d5a4">
         <dex dex="C:\Users\Donal Kearns\Documents\Performance technology\Donal_Kearns_Lab04\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_6fd6932657b1af08533d68e25be782cc3c1cae73\classes.dex" />
     </item>
     <item
