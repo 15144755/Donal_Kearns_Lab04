@@ -11,31 +11,95 @@
     tools:context="com.csis.lab04.MainActivity">
 
 
-
-    <TextView
+    <Switch
+        android:text="Start/Stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="COUNTER VALUE"
-        android:id="@+id/counter"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/onOffSwitch"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="72dp" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/slider1"
+        android:max="5"
+        android:layout_below="@+id/onOffSwitch"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="34dp" />
 
     <Switch
-        android:text="On/Off"
+        android:text="Start/Stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/counter"
-        android:layout_marginTop="80dp"
-        android:id="@+id/onOffSwitch" />
+        android:id="@+id/onOffSwitch2"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/onOffSwitch" />
 
     <TextView
-        android:text="FREQUENCY VALUE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/counter"
+        android:text="VOLUME COUNTER"
+        android:id="@+id/volume"
+        android:layout_below="@+id/onOffSwitch2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp"
-        android:id="@+id/frequency" />
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FREQUENCY VOLUME"
+        android:id="@+id/frequency"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/slider1"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/slider2"
+        android:max="5"
+        android:layout_below="@+id/volume"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="33dp" />
+
+    <TextView
+        android:text="Microphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/slider2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp" />
+
+    <Switch
+        android:text="record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/onOffSwitch3" />
+
+    <Switch
+        android:text="stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/onOffSwitch4"
+        android:layout_alignBaseline="@+id/onOffSwitch3"
+        android:layout_alignBottom="@+id/onOffSwitch3"
+        android:layout_alignStart="@+id/textView2" />
+
+    <Switch
+        android:text="play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/onOffSwitch5"
+        android:layout_alignBaseline="@+id/onOffSwitch4"
+        android:layout_alignBottom="@+id/onOffSwitch4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp" />
 
 </RelativeLayout>

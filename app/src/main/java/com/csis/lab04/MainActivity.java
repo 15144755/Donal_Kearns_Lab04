@@ -35,8 +35,13 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     private PdUiDispatcher dispatcher; //must declare this to use later, used to receive data from sendEvents
+    private SeekBar slider1; //Declaring slider1 here
+    private SeekBar slider2;
 
-    TextView myCounter;
+
+    float slide1Value = 2.0f;
+
+    TextView myVolume;
     TextView myFrequency;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +49,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);//Mandatory
 
 
-        myCounter = (TextView) findViewById(R.id.counter);
+        myVolume = (TextView) findViewById(R.id.volume);
         myFrequency = (TextView) findViewById(R.id.frequency);
         Switch onOffSwitch = (Switch) findViewById(R.id.onOffSwitch);//declared the switch here pointing to id onOffSwitch
-
+        Switch onOffSwitch2 = (Switch) findViewById(R.id.onOffSwitch2);
+        Switch onOffSwitch3 = (Switch) findViewById(R.id.onOffSwitch3);
+        Switch onOffSwitch4 = (Switch) findViewById(R.id.onOffSwitch4);
+        Switch onOffSwitch5 = (Switch) findViewById(R.id.onOffSwitch5);
         //Check to see if switch1 value changes
         onOffSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -55,8 +63,91 @@ public class MainActivity extends AppCompatActivity {
                 float val = (isChecked) ?  1.0f : 0.0f; // value = (get value of isChecked, if true val = 1.0f, if false val = 0.0f)
                 sendFloatPD("onOff", val); //send value to patch, receiveEvent names onOff
 
+
             }
         });
+
+        onOffSwitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                float val = (isChecked) ?  1.0f : 0.0f; // value = (get value of isChecked, if true val = 1.0f, if false val = 0.0f)
+                sendFloatPD("onOff2", val); //send value to patch, receiveEvent names onOff
+
+
+            }
+        });
+        onOffSwitch3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                float val = (isChecked) ?  1.0f : 0.0f; // value = (get value of isChecked, if true val = 1.0f, if false val = 0.0f)
+                sendFloatPD("button1", val); //send value to patch, receiveEvent names onOff
+
+
+            }
+        });
+        onOffSwitch4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                float val = (isChecked) ?  1.0f : 0.0f; // value = (get value of isChecked, if true val = 1.0f, if false val = 0.0f)
+                sendFloatPD("button2", val); //send value to patch, receiveEvent names onOff
+
+
+            }
+        });
+        onOffSwitch5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                float val = (isChecked) ?  1.0f : 0.0f; // value = (get value of isChecked, if true val = 1.0f, if false val = 0.0f)
+                sendFloatPD("button3", val); //send value to patch, receiveEvent names onOff
+
+
+            }
+        });
+        //<--------SLIDER 1 LISTENER------------>
+        slider1 = (SeekBar) findViewById(R.id.slider1);
+
+        slider1.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        slide1Value = progress;
+                        sendFloatPD("slider1", slide1Value);
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+
+                    }
+                });
+        //<--------SLIDER 2 LISTENER------------>
+        slider2 = (SeekBar) findViewById(R.id.slider2);
+
+        slider2.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        slide1Value = progress;
+                        sendFloatPD("slider2", slide1Value);
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+
+                    }
+                });
+
 
         try { // try the code below, catch errors if things go wrong
             initPD(); //method is below to start PD
@@ -74,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
         PdAudio.startAudio(this);
     }
 
+
     @Override//If we switch to other screen
     protected void onPause()
     {
@@ -86,6 +178,8 @@ public class MainActivity extends AppCompatActivity {
     {
         PdBase.sendFloat(receiver, value); //send float to receiveEvent
     }
+
+
 
     //METHOD TO SEND BANG TO PUREDATA PATCH
     public void sendBangPD(String receiver)
@@ -120,8 +214,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void receiveFloat(String source, float x) {
             pdPost("float: " + x);
-            if(source.equals("sendCounter")) {
-                myCounter.setText(String.valueOf(x));
+            if(source.equals("sendVolume")) {
+                myVolume.setText(String.valueOf(x));
             }
             if(source.equals("sendFrequency")) {
                 myFrequency.setText(String.valueOf(x));
@@ -170,8 +264,8 @@ public class MainActivity extends AppCompatActivity {
 
         dispatcher = new PdUiDispatcher(); //create UI dispatcher
         PdBase.setReceiver(dispatcher); //set dispatcher to receive items from puredata patches
-        dispatcher.addListener("sendCounter",receiver1);
-        PdBase.subscribe("sendCounter");
+        dispatcher.addListener("sendVolume",receiver1);
+        PdBase.subscribe("sendVolume");
         dispatcher.addListener("sendFrequency",receiver1);
         PdBase.subscribe("sendFrequency");
 
